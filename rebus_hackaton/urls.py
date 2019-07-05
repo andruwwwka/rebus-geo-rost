@@ -20,6 +20,6 @@ from rest_framework_swagger.views import get_swagger_view
 schema_view = get_swagger_view(title='Rebus application API')
 
 urlpatterns = [
-    path(r'^$', schema_view),
+    path('apidocs/', schema_view),
     path('admin/', admin.site.urls),
 ]
