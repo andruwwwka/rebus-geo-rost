@@ -1,0 +1,22 @@
+version: "3"
+services:
+  api:
+    restart: always
+    build:
+      context: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/app/
+    depends_on:
+      - db
+
+  db:
+    image: postgres:11-alpine
+    environment:
+    - POSTGRES_USER=rebus
+    - POSTGRES_PASSWORD=rebus
+    - POSTGRES_DB=rebus_db
+    command: postgres -c 'pg_trgm.similarity_threshold=0.1'
+    ports:
+      - 5432:5432
