@@ -15,7 +15,7 @@ class PolygonSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_rating(self, obj):
-        return randint(1,10)
+        return randint(1, 3)
 
 
 class TestPolygonViewSet(mixins.ListModelMixin,
