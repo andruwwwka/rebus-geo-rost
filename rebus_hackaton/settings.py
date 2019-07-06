@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_swagger',
+    'app_templates',
+    'geo_data',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'rebus_hackaton.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,9 +80,13 @@ WSGI_APPLICATION = 'rebus_hackaton.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME', 'rebus_db'),
+        'USER': os.environ.get('DB_USER', 'rebus'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'rebus'),
+        'HOST': os.environ.get('DB_HOST', 'db'),
+        'PORT': '5432',
+    },
 }
 
 

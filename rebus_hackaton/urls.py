@@ -14,12 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.generic import TemplateView
 from rest_framework_swagger.views import get_swagger_view
 
 schema_view = get_swagger_view(title='Rebus application API')
 
 urlpatterns = [
-    path('apidocs/', schema_view),
+    path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('admin/', admin.site.urls),
+    path('app_templates/', include('app_templates.urls'), name='app_templates'),
+    path('geo_data/', include('geo_data.urls'), name='geo_data'),
+    path('apidocs/', schema_view),
 ]

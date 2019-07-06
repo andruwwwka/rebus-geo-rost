@@ -3,3 +3,5 @@ djangorestframework==3.9.4
 django-rest-swagger==2.2.0
 django-heroku==0.3.1
 gunicorn==19.9.0
+yandex-geocoder==1.0.0
+xlrd==1.2.0
