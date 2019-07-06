@@ -24,5 +24,6 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('admin/', admin.site.urls),
     path('app_templates/', include('app_templates.urls'), name='app_templates'),
+    path('geo_data/', include('geo_data.urls'), name='geo_data'),
     path('apidocs/', schema_view),
 ]
