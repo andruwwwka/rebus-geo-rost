@@ -1,1 +1,1 @@
-from .poligons import Poligon
+from .polygons import Polygon

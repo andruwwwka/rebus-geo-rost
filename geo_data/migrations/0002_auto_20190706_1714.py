@@ -2,11 +2,11 @@
 
 from django.db import migrations
 
-from utils.generate_poligons import PoligonDataGenerator
+from utils.generate_polygons import PolygonDataGenerator
 
 
-def create_poligons(*args, **kwargs):
-    PoligonDataGenerator.generate_poligons()
+def create_polygons(*args, **kwargs):
+    PolygonDataGenerator.generate_polygons()
 
 
 class Migration(migrations.Migration):
@@ -16,5 +16,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(create_poligons)
+        migrations.RunPython(create_polygons)
     ]

@@ -1,1 +1,1 @@
-from .test_resource import TestPoligonViewSet
+from .test_resource import TestPolygonViewSet

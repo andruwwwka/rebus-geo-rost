@@ -12,13 +12,13 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Poligon',
+            name='Polygon',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('x1', models.FloatField()),
-                ('y1', models.FloatField()),
-                ('x2', models.FloatField()),
-                ('y2', models.FloatField()),
+                ('lat1', models.FloatField()),
+                ('lon1', models.FloatField()),
+                ('lat2', models.FloatField()),
+                ('lon2', models.FloatField()),
             ],
         ),
     ]
