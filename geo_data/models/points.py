@@ -8,6 +8,8 @@ class Point(models.Model):
     HOSPITAL = 'hospital'
     CULTURE = 'culture'
     SPORTS_GROUND = 'sports_ground'
+    POST_OFFICE = 'post_office'
+    WASTE_POINTS = 'waste_points'
 
     KINDS = [
         (INFANT_SCHOOL, INFANT_SCHOOL),
@@ -15,7 +17,9 @@ class Point(models.Model):
         (BUS_STATION, BUS_STATION),
         (HOSPITAL, HOSPITAL),
         (CULTURE, CULTURE),
-        (SPORTS_GROUND, SPORTS_GROUND)
+        (SPORTS_GROUND, SPORTS_GROUND),
+        (POST_OFFICE, POST_OFFICE),
+        (WASTE_POINTS, WASTE_POINTS),
     ]
 
     lat = models.FloatField()
