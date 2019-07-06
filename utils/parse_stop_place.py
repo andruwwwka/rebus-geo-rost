@@ -1,20 +1,20 @@
 import requests
 import xlrd
 
-API_KEY = '2c0f821f-b2c0-4a36-8ac3-b0a97bdbf072'
 
 
-class StopPlaceXlsParser(object):
-    def read(self, filename='/home/konovalov/stop_places.xls'):
-        book = xlrd.open_workbook(filename)
-        sheet = book.sheet_by_index(sheetx=0)
-        for row_index in range(1, sheet.nrows):
-            print('name: {0}, latitude {1}, longitude {2}'.format(
-                sheet.cell(row_index, 1),
-                sheet.cell(row_index, 2),
-                sheet.cell(row_index, 3),
-            ))
-        return None
+
+# class StopPlaceXlsParser(object):
+#     def read(self, filename='/home/konovalov/stop_places.xls'):
+#         book = xlrd.open_workbook(filename)
+#         sheet = book.sheet_by_index(sheetx=0)
+#         for row_index in range(1, sheet.nrows):
+#             print('name: {0}, latitude {1}, longitude {2}'.format(
+#                 sheet.cell(row_index, 1),
+#                 sheet.cell(row_index, 2),
+#                 sheet.cell(row_index, 3),
+#             ))
+#         return None
 
 
 class SportXlsParser(object):
