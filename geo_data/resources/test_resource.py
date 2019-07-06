@@ -10,7 +10,7 @@ class PoligonSerializer(serializers.ModelSerializer):
         model = Poligon
 
 
-class PoligonViewSet(mixins.ListModelMixin,
+class TestPoligonViewSet(mixins.ListModelMixin,
                      GenericViewSet):
     queryset = Poligon.objects.all()
     serializer_class = PoligonSerializer
