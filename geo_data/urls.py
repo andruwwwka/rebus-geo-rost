@@ -1,8 +1,8 @@
 from rest_framework import routers
 
-from app_templates.resources.simple import SimpleViewSet
+from geo_data.resources import TestPolygonViewSet
 
 router = routers.DefaultRouter()
-router.register(r'test', SimpleViewSet, 'test')
+router.register(r'test', TestPolygonViewSet, 'test')
 
 urlpatterns = router.urls
