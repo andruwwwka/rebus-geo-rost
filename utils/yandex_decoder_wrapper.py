@@ -29,7 +29,6 @@ class YandexDecodeApi():
 
     def get_city(self, coordinate):
         response_data = self.get_response(f'{coordinate[1]},{coordinate[0]}')
-        print(response_data)
         try:
             city = ''
             address_components = response_data.get('response'). \
