@@ -4,7 +4,7 @@ from django.db import models
 class Point(models.Model):
     INFANT_SCHOOL = 'infant_school'
     SCHOOL = 'school'
-    BUS_STOP = 'bus_stop'
+    BUS_STATION = 'bus_station'
     HOSPITAL = 'hospital'
     CULTURE = 'culture'
     SPORTS_GROUND = 'sports_ground'
@@ -12,7 +12,7 @@ class Point(models.Model):
     KINDS = [
         (INFANT_SCHOOL, INFANT_SCHOOL),
         (SCHOOL, SCHOOL),
-        (BUS_STOP, BUS_STOP),
+        (BUS_STATION, BUS_STATION),
         (HOSPITAL, HOSPITAL),
         (CULTURE, CULTURE),
         (SPORTS_GROUND, SPORTS_GROUND)

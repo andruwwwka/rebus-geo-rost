@@ -128,5 +128,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Key for yandex API
+API_KEY = os.environ.get('API_KEY')
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())
