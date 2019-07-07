@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <span style="position: absolute; background-color: red; color: white;">Home</span>
+    <!--<span style="position: absolute; background-color: red; color: white;">Home</span>-->
     <!--<img alt="Vue logo" src="../assets/logo.png">-->
     <MapContainer/>
   </div>
