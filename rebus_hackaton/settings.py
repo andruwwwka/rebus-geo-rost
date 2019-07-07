@@ -129,6 +129,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
 # Key for yandex API
 API_KEY = os.environ.get('API_KEY')
 
