@@ -16,14 +16,14 @@
         data () {
             return {
                 items: [
-                    {id: 'infant_school', name: 'Дошкольные учреждения', enabled: true},
-                    {id: 'school', name: 'Школы', enabled: true},
-                    {id: 'bus_station', name: 'Транспорт', enabled: false},
-                    {id: 'hospital', name: 'Медучреждения', enabled: false},
-                    {id: 'culture', name: 'Культурные обхекты', enabled: true},
-                    {id: 'sports_ground', name: 'Спортивные обекты', enabled: true},
-                    {id: 'post_office', name: 'Почтовые отделения', enabled: true},
-                    {id: 'waste_points', name: 'Пункты РСО', enabled: false}
+                    {id: 'infant_school', name: 'Дошкольные учреждения', enabled: true, icon: 'kindergarten'},
+                    {id: 'school', name: 'Школы', enabled: true, icon: 'school'},
+                    {id: 'bus_station', name: 'Транспорт', enabled: false, icon: 'bus'},
+                    {id: 'hospital', name: 'Медучреждения', enabled: false, icon: 'medicine'},
+                    {id: 'culture', name: 'Культурные объекты', enabled: true, icon: 'culture'},
+                    {id: 'sports_ground', name: 'Спортивные объекты', enabled: true, icon: 'sport'},
+                    {id: 'post_office', name: 'Почтовые отделения', enabled: true, icon: 'basket'},
+                    {id: 'waste_points', name: 'Пункты РСО', enabled: false, icon: 'basket'}
                 ]/*,
                 filter: [/!*'school'*!/ 'bus_station']*/
             }
