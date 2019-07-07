@@ -28,6 +28,7 @@ class Point(models.Model):
     polygon = models.ForeignKey(
         'Polygon',
         on_delete=models.CASCADE,
+        related_name="points"
     )
     kind = models.CharField(
         max_length=25,
