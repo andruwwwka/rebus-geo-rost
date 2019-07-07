@@ -5,7 +5,14 @@
                  class="reb-CatFilter__item"
                  :class="{ 'reb-CatFilter__item-inactive': !item.enabled }"
                  v-on:click="itemClick(item)"
-            >{{ item.name }}</div>
+            >
+                <span>
+                    <!--'../assets/' + item.icon + '.svg'"-->
+                    <!--<img :src="itemToIconSrc(item)" width="24px" height="24px"/>-->
+                    <!--<img :src="../assets/' + item.icon + '.svg'" width="24px" height="24px"/>-->
+                </span>
+                <span>{{ item.name }}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -22,6 +29,9 @@
             }
         },
         methods: {
+            itemToIconSrc (item) {
+                return  '../assets/' + item.icon + '.svg';
+            },
             itemClick (item) {
                 item.enabled = !item.enabled;
                 this.$emit('filter-change', this.items);
