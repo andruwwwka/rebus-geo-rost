@@ -14,10 +14,14 @@ class PolygonSerializer(serializers.ModelSerializer):
 
     def __init__(self, *args, **kwargs):
         super(PolygonSerializer, self).__init__(*args, **kwargs)
-        self.kind = self.context['request'].query_params.get('kind')
+        kind = self.context['request'].query_params.get('kind')
+        if kind:
+            self.kinds = kind.split(',')
+        else:
+            self.kinds = []
 
     def get_rating(self, obj):
-        return obj.get_rating_by_kind(self.kind)
+        return obj.get_rating_by_kind(self.kinds)
 
 
 class PolygonViewSet(mixins.ListModelMixin,

@@ -10,9 +10,19 @@ class Polygon(models.Model):
     lat2 = models.FloatField()
     lon2 = models.FloatField()
 
-    def get_rating_by_kind(self, kind=None):
+    def get_rating_by_kind(self, kinds=None):
+        from geo_data.models import Value
         points = self.points
-        if kind:
-            points = points.filter(kind=kind)
-        return points.count()
+        if kinds:
+            sum_rating = 0
+            for kind in kinds:
+                total_count = points.filter(kind=kind).count()
+                metrics = Value.objects.get(kind=kind)
+                sum_rating += total_count // metrics.part + 1
+            rating = round(sum_rating / len(kinds))
+        else:
+            total_count = points.count()
+            metrics = Value.objects.get(kind='all')
+            rating = total_count // metrics.part + 1
+        return rating
 
