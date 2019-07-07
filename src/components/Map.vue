@@ -64,6 +64,7 @@
     export default {
         name: "Map",
         props: {
+            filter: Array,
             msg: String
         },
         data () {
@@ -134,32 +135,13 @@
                 ]*/
             }
         },
+        watch: {
+            filter: function (val) {
+                this.updateData();
+            }
+        },
         mounted() {
-            this.drawGeoDataToCanvas();
-            /*axios
-                .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-                .then(response => (this.info = response));*/
-            axios
-                .get('https://rebus-hackaton.herokuapp.com/geo_data/test/')
-                .then(response => {
-                    //debugger;
-                    //console.log('s', response.data);
-                    // TODO вернуть
-                    this.geoData = response.data;
-                    this.drawGeoDataToCanvas();
-
-                    //ctx.lineTo(this.currentMouse.x, this.currentMouse.y);
-                    /*ctx.lineTo(100, 100);
-                    ctx.strokeStyle ="#F63E02";
-                    ctx.lineWidth = 2;
-                    ctx.stroke();*/
-
-
-                })
-                .catch(error => {
-                    console.log(error);
-                    //debugger;
-                });
+            this.updateData();
         },
         methods: {
             ratingToColor (rating) {
@@ -171,6 +153,18 @@
                 }
             },
 
+            updateData () {
+                axios
+                    .get('https://rebus-hackaton.herokuapp.com/geo_data/ratings/' + this.stringFilter)
+                    .then(response => {
+                        this.geoData = response.data;
+                        this.drawGeoDataToCanvas();
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+            },
+
             drawGeoDataToCanvas () {
                 // draw only after got data and initialize yandex map
                 if (!this.mapBounds || !this.geoData) {
@@ -179,13 +173,9 @@
                 //mapInstance
                 this.calcMapSizes();
 
-
-                debugger;
-                //console.log('gd', this.geoData);
                 let canvas = this.$refs['my-canvas'];
                 canvas.width = this.mapWidth;
                 canvas.height = this.mapHeight;
-                //console.log('c=',this.$refs['my-canvas']);
                 var ctx = canvas.getContext("2d");
                 ctx.clearRect(0,0,canvas.width,canvas.height);
                 for (var i = 0, len = this.geoData.length; i < len; i++) {
@@ -197,11 +187,6 @@
                     let botRight = this.lonLatToXY(item.lon2, item.lat2);
                     ctx.fillRect(topLeft[0],topLeft[1],botRight[0]-topLeft[0],botRight[1]-topLeft[1]);
                 }
-
-                //ctx.fillRect(this.mapWidth/2,this.mapHeight/2,10,10);
-                ctx.fillRect(150, 75, 20, 70);
-                debugger;
-
             },
 
             calcMapSizes () {
@@ -223,6 +208,12 @@
                 this.drawGeoDataToCanvas();
                 //debugger;
                 //console.log('initHandler ГОТОВО');
+            }
+        },
+        computed: {
+            // вычисляемый фильтр
+            stringFilter: function () {
+                return (this.filter && this.filter.length) ? '?kind=' + this.filter.join(',') : '';
             }
         },
         components: {
