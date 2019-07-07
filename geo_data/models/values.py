@@ -8,5 +8,6 @@ class Value(models.Model):
         max_length=25,
         choices=Point.KINDS
     )
-    max_count = models.FloatField()
-    part = models.FloatField()
+    first_border = models.FloatField()
+    second_border = models.FloatField()
+    third_border = models.FloatField()
