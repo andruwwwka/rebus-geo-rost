@@ -9,3 +9,10 @@ class Polygon(models.Model):
     # Координаты нихнего угла полигона
     lat2 = models.FloatField()
     lon2 = models.FloatField()
+
+    def get_rating_by_kind(self, kind=None):
+        points = self.points
+        if kind:
+            points = points.filter(kind=kind)
+        return points.count()
+
