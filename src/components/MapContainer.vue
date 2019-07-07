@@ -1,6 +1,6 @@
 <template>
     <div class="reb-MapContainer">
-        <span style="position: absolute; background-color: red; color: white;">MapCont</span>
+        <!--<span style="position: absolute; background-color: red; color: white;">MapCont</span>-->
         <Map/>
         <CatFilter/>
     </div>
