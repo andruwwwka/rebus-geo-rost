@@ -1,12 +1,12 @@
 <template>
     <div class="reb-CatFilter">
-        <ul>
-            <li>Школы</li>
-            <li>Детские сады</li>
-            <li>Медицина</li>
-            <li>Спортивные объекты</li>
-            <li>Общественный транспорт</li>
-        </ul>
+        <div class="reb-CatFilter__list">
+            <div>Школы</div>
+            <div class="reb-CatFilter__item-inactive">Детские сады</div>
+            <div>Медицина</div>
+            <div>Спортивные объекты</div>
+            <div>Общественный транспорт</div>
+        </div>
     </div>
 </template>
 
@@ -26,5 +26,15 @@
         background-color: white;
         border-radius: 8px;
         box-shadow: 5px 2px 9px rgba(0,0,0,0.2);
+        text-align: left;
+    }
+    .reb-CatFilter__list {
+        line-height: 2;
+    }
+    .reb-CatFilter__item {
+
+    }
+    .reb-CatFilter__item-inactive {
+        color: #949494;
     }
 </style>
