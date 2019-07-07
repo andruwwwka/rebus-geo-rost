@@ -1,6 +1,8 @@
+import os
 from abc import abstractmethod, ABCMeta
 
 import xlrd
+from django.conf import settings
 from django.db.models import Q
 
 from geo_data.models import Point, Polygon
@@ -15,7 +17,8 @@ class BasePointCreator:
 
     @staticmethod
     def get_sheet(filename):
-        book = xlrd.open_workbook(filename)
+        file_path = os.path.join(settings.BASE_DIR, 'data', filename)
+        book = xlrd.open_workbook(file_path)
         sheet = book.sheet_by_index(sheetx=0)
         return sheet
 

@@ -1,10 +1,10 @@
-from geo_data.models import Point
+from geo_data.models import Point, Polygon
 from utils.base_point_creator import BasePointCreator
 
 
 class HospitalParser(BasePointCreator):
     def fill_points(self):
-        sheet = self.get_sheet('../data/....xls')
+        sheet = self.get_sheet('gos_med.xls')
         for row_index in range(1, sheet.nrows):
             latitude = sheet.cell(row_index, 1).value
             longitude = sheet.cell(row_index, 2).value
@@ -16,5 +16,5 @@ class HospitalParser(BasePointCreator):
                     kind=Point.HOSPITAL,
                     polygon=self.get_polygon(latitude, longitude)
                 )
-            except Point.DoesNotExist:
+            except Polygon.DoesNotExist:
                 pass
