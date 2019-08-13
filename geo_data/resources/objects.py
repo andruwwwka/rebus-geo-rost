@@ -18,7 +18,7 @@ class CategoryViewSet(mixins.ListModelMixin, GenericViewSet):
 
 
 class GeoObjectSerializer(serializers.ModelSerializer):
-    """Сериализатор для массива объектов"""
+    """Сериализатор для объектов"""
     class Meta:
         model = GeoObject
         fields = ('name', 'category', 'longitude', 'latitude')
