@@ -80,13 +80,21 @@ WSGI_APPLICATION = 'rebus_hackaton.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': os.environ.get('DB_NAME', 'rebus_db'),
+    #     'USER': os.environ.get('DB_USER', 'rebus'),
+    #     'PASSWORD': os.environ.get('DB_PASSWORD', 'rebus'),
+    #     'HOST': os.environ.get('DB_HOST', 'db'),
+    #     'PORT': '5432',
+    # },
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'rebus_db'),
-        'USER': os.environ.get('DB_USER', 'rebus'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'rebus'),
-        'HOST': os.environ.get('DB_HOST', 'db'),
-        'PORT': '5432',
+        'NAME': 'rebus',
+        'USER': 'konovalov',
+        'PASSWORD': '123456',
+        'HOST': '',
+        'PORT': '',
     },
 }
 
