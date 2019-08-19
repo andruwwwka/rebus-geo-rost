@@ -1,3 +1,5 @@
+from django_filters import rest_framework
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import serializers, mixins
 from rest_framework.viewsets import GenericViewSet
 
@@ -24,7 +26,19 @@ class GeoObjectSerializer(serializers.ModelSerializer):
         fields = ('name', 'category', 'longitude', 'latitude')
 
 
-class GeoObjectViewSet(mixins.ListModelMixin, GenericViewSet):
+class GeoObjectsFilter(rest_framework.FilterSet):
+    """Класс дополнительной фильтрации по категориям
+        Перечисление через запятую без пробелов"""
+    class Meta:
+        model = GeoObject
+        fields = {
+            'category': ['in']
+        }
+
+
+class GeoObjectsViewSet(mixins.ListModelMixin, GenericViewSet):
     """Представление объектов"""
     queryset = GeoObject.objects.all()
     serializer_class = GeoObjectSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = GeoObjectsFilter
