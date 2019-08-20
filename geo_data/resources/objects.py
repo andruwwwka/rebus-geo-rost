@@ -1,7 +1,7 @@
 from django_filters import rest_framework
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import serializers, mixins
-from rest_framework.viewsets import GenericViewSet
+from rest_framework import serializers, mixins, generics
+from rest_framework.viewsets import GenericViewSet, ReadOnlyModelViewSet
 
 from geo_data.models import Category, GeoObject
 
@@ -13,7 +13,8 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'radius', 'power')
 
 
-class CategoryViewSet(mixins.ListModelMixin, GenericViewSet):
+class CategoryViewSet(ReadOnlyModelViewSet,
+                      generics.ListAPIView):
     """Представление категорий"""
     queryset = Category.objects.filter(is_active=True)
     serializer_class = CategorySerializer
@@ -36,7 +37,8 @@ class GeoObjectsFilter(rest_framework.FilterSet):
         }
 
 
-class GeoObjectsViewSet(mixins.ListModelMixin, GenericViewSet):
+class GeoObjectsViewSet(mixins.ListModelMixin,
+                        GenericViewSet):
     """Представление объектов"""
     queryset = GeoObject.objects.all()
     serializer_class = GeoObjectSerializer
