@@ -37,10 +37,23 @@ class GeoObjectsFilter(rest_framework.FilterSet):
         }
 
 
-class GeoObjectsViewSet(mixins.ListModelMixin,
-                        GenericViewSet):
+class GeoObjectsViewSet(mixins.ListModelMixin, GenericViewSet):
     """Представление объектов"""
     queryset = GeoObject.objects.all()
     serializer_class = GeoObjectSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = GeoObjectsFilter
+
+
+class GeoObjectDetailSerializer(serializers.ModelSerializer):
+    """Сериализатор для отдельного объекта"""
+    class Meta:
+        model = GeoObject
+        fields = '__all__'
+
+
+class GeoObjectDetailViewSet(mixins.RetrieveModelMixin, GenericViewSet):
+    """Представление для отдельного объекта"""
+
+    queryset = GeoObject.objects.all()
+    serializer_class = GeoObjectDetailSerializer
