@@ -23,8 +23,7 @@ class Category(models.Model):
     )
 
     def __str__(self):
-        return '{0}: {1}({2}м)'.format(
-            self.__class__.__name__,
+        return '{0}({1}м)'.format(
             self.name,
             self.radius,
         )

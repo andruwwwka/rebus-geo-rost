@@ -31,8 +31,7 @@ class GeoObject(models.Model):
     )
 
     def __str__(self):
-        return '{0}: {1}({2}/{3})'.format(
-            self.__class__.__name__,
+        return '{0}({1}/{2})'.format(
             self.name,
             self.longitude,
             self.latitude,
