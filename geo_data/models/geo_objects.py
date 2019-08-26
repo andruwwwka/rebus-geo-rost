@@ -39,3 +39,7 @@ class GeoObject(models.Model):
 
     def __repr__(self):
         return self.__str__()
+
+    class Meta:
+        verbose_name = 'Объект'
+        verbose_name_plural = 'Объекты'

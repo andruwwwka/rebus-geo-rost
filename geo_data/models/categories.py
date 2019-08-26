@@ -30,3 +30,7 @@ class Category(models.Model):
 
     def __repr__(self):
         return self.__str__()
+
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
