@@ -1,7 +1,9 @@
 from rest_framework import routers
 
-from geo_data.resources import TestPolygonViewSet, PolygonViewSet
-from geo_data.resources.objects import CategoryViewSet, GeoObjectsViewSet, GeoObjectDetailViewSet
+from .resources import TestPolygonViewSet, PolygonViewSet
+from .resources.category_resource import CategoryViewSet
+from .resources.geo_detail_resource import GeoObjectDetailViewSet
+from .resources.geo_objects_resource import GeoObjectsViewSet
 
 router = routers.DefaultRouter()
 router.register(r'test', TestPolygonViewSet, 'test')
