@@ -1,5 +1,5 @@
 from django.contrib import admin
-from geo_data.models import Category, GeoObject
+from .models import Category, GeoObject
 
 
 class CategoryAdmin(admin.ModelAdmin):

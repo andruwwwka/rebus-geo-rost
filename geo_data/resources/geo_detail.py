@@ -1,7 +1,7 @@
 from rest_framework import mixins, serializers
 from rest_framework.viewsets import GenericViewSet
 
-from geo_data.models import GeoObject
+from ..models import GeoObject
 
 
 class GeoObjectDetailSerializer(serializers.ModelSerializer):

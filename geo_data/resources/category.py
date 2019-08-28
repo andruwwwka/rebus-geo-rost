@@ -1,7 +1,7 @@
 from rest_framework import mixins, serializers
 from rest_framework.viewsets import GenericViewSet
 
-from geo_data.models import Category
+from ..models import Category
 
 
 class CategorySerializer(serializers.ModelSerializer):

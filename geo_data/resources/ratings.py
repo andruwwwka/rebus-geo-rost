@@ -1,7 +1,7 @@
 from rest_framework import serializers, mixins
 from rest_framework.viewsets import GenericViewSet
 
-from geo_data.models import Polygon
+from ..models import Polygon
 
 
 class PolygonSerializer(serializers.ModelSerializer):
