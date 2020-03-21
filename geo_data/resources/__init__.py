@@ -1,2 +1,3 @@
-from .ratings import PolygonViewSet
-from .test_resource import TestPolygonViewSet
+from .category import CategoryViewSet
+from .geo_detail import GeoObjectDetailViewSet
+from .geo_object import GeoObjectsViewSet
