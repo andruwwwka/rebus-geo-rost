@@ -7,7 +7,13 @@ from django.db import migrations
 
 
 def load_points(*args, **kwargs):
-    fixture_path = os.path.join(settings.BASE_DIR, 'geo_data', 'fixtures', 'initial_data.json')
+    """Загрузка начальных данных."""
+    fixture_path = os.path.join(
+        settings.BASE_DIR,
+        'geo_data',
+        'fixtures',
+        'initial_data.json'
+    )
     call_command('loaddata', fixture_path)
 
 

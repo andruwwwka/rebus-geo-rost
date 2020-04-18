@@ -1,6 +1,8 @@
+"""Роутинг приложения геоданных."""
 from rest_framework import routers
 
-from .resources import CategoryViewSet, GeoObjectDetailViewSet, GeoObjectsViewSet
+from .resources import CategoryViewSet, GeoObjectDetailViewSet, \
+    GeoObjectsViewSet
 
 router = routers.DefaultRouter()
 router.register(r'categories', CategoryViewSet, 'categories')
