@@ -1,10 +1,10 @@
+"""Модель гео-объектов."""
 from django.db import models
 
 
 class GeoObject(models.Model):
-    """
-    Объект для отображения
-    """
+    """Объект для отображения."""
+
     name = models.CharField(
         verbose_name='Наименование',
         max_length=255,
@@ -29,17 +29,3 @@ class GeoObject(models.Model):
         blank=True,
         null=True,
     )
-
-    def __str__(self):
-        return '{0}({1}/{2})'.format(
-            self.name,
-            self.longitude,
-            self.latitude,
-        )
-
-    def __repr__(self):
-        return self.__str__()
-
-    class Meta:
-        verbose_name = 'Объект'
-        verbose_name_plural = 'Объекты'
