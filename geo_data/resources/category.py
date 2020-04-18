@@ -1,18 +1,9 @@
-"""Ресурсы для управления категориями."""
-from rest_framework import mixins, serializers
+"""Представления для управления категориями."""
+from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet
 
 from ..models import Category
-
-
-class CategorySerializer(serializers.ModelSerializer):
-    """Сериалайзер для категорий."""
-
-    class Meta:
-        """Описание метаинформации сериалайзера категорий."""
-
-        model = Category
-        exclude = ('is_active', )
+from ..serializers import CategorySerializer
 
 
 class CategoryViewSet(mixins.ListModelMixin,
