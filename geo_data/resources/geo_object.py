@@ -1,15 +1,11 @@
 """Представление для получения геоданных."""
-from rest_framework import mixins
-from rest_framework.viewsets import GenericViewSet
+from rest_framework.viewsets import ModelViewSet
 
 from ..models import GeoObject
 from ..serializers import GeoObjectSerializer
 
 
-class GeoObjectsViewSet(mixins.ListModelMixin,
-                        mixins.CreateModelMixin,
-                        mixins.RetrieveModelMixin,
-                        GenericViewSet):
+class GeoObjectsViewSet(ModelViewSet):
     """Представление объектов геоданных."""
 
     queryset = GeoObject.objects.all()
