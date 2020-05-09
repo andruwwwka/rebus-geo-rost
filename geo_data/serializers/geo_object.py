@@ -1,10 +1,10 @@
 """Сериалайзеры для геоданных."""
-from rest_framework.serializers import ModelSerializer
+from rest_framework import serializers
 
 from ..models import GeoObject
 
 
-class GeoObjectSerializer(ModelSerializer):
+class GeoObjectSerializer(serializers.ModelSerializer):
     """Сериалайзер объектов геоданных."""
 
     class Meta:
@@ -14,7 +14,7 @@ class GeoObjectSerializer(ModelSerializer):
         fields = "__all__"
 
 
-class GeoObjectsItemSerializer(ModelSerializer):
+class GeoObjectsItemSerializer(serializers.ModelSerializer):
     """Сериалайзер геобъекта геоданных в виде элемента набора в словаре."""
 
     class Meta:
