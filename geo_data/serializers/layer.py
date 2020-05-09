@@ -24,6 +24,7 @@ class LayerSerializer(serializers.ModelSerializer):
 
         model = Category
         fields = (
+            'id',
             'name',
             'geo_objects'
         )
