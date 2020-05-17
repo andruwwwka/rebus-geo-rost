@@ -33,11 +33,11 @@ class Command(BaseCommand):
             ],
             'МФЦ': ['МФЦ.csv', ],
             'Остановки': ['Остановки.csv', ],
-            'Школы': [
+            'Проблемные объекты строительства': [
                 'Проблемные и потенциально проблемные объекты '
                 'строительства.csv',
             ],
-            'Проблемные объекты строительства': ['Школы.csv', ]
+            'Школы': ['Школы.csv', ]
         }
         for category_name, data_source_file in category_mapping.items():
             category = Category.objects.create(
