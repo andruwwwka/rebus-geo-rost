@@ -17,7 +17,16 @@ class LayerViewSet(ListModelMixin, GenericViewSet):
         """Получение списка категорий, которые будут построены в слои."""
         params = self.request.query_params
         category_ids = params.get('categories', '').split(',')
-        categories = Category.objects.filter(id__in=category_ids)
+        filter_params = {
+            'id__in': category_ids,
+        }
+        if not params.get('debug'):
+            filter_params.update(
+                {
+                    'debug': False
+                }
+            )
+        categories = Category.objects.filter(**filter_params)
         coordinate_filters = {
             'longitude_min',
             'longitude_max',
