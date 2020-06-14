@@ -8,6 +8,7 @@ from ..serializers import GeoObjectsItemSerializer
 class LayerListQuerySerializer(serializers.Serializer):
     """Сериалайзер для параметров запроса к списку слоев."""
     categories = serializers.ListField(child=serializers.IntegerField())
+    debug = serializers.BooleanField(required=False)
     longitude_min = serializers.FloatField(required=False)
     longitude_max = serializers.FloatField(required=False)
     latitude_min = serializers.FloatField(required=False)

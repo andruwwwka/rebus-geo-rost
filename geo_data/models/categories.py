@@ -22,7 +22,3 @@ class Category(models.Model):
         verbose_name='Активно',
         default=True,
     )
-    debug = models.BooleanField(
-        verbose_name='Отладочная категория',
-        default=False
-    )
