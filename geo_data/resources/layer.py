@@ -20,12 +20,6 @@ class LayerViewSet(ListModelMixin, GenericViewSet):
         filter_params = {
             'id__in': category_ids,
         }
-        if not params.get('debug'):
-            filter_params.update(
-                {
-                    'debug': False
-                }
-            )
         categories = Category.objects.filter(**filter_params)
         coordinate_filters = {
             'longitude_min',
@@ -34,6 +28,12 @@ class LayerViewSet(ListModelMixin, GenericViewSet):
             'latitude_max'
         }
         points_filter_params = {'category_id__in': category_ids}
+        if not params.get('debug'):
+            points_filter_params.update(
+                {
+                    'debug': False
+                }
+            )
         if all((field in params) for field in coordinate_filters):
             points_filter_params.update(
                 {

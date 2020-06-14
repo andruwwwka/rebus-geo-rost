@@ -29,3 +29,7 @@ class GeoObject(models.Model):
         blank=True,
         null=True,
     )
+    debug = models.BooleanField(
+        verbose_name='Отладочный объект',
+        default=False
+    )
