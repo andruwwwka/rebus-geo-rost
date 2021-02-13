@@ -9,7 +9,6 @@ db.sqlite3
 
 # Editor directories and files
 .idea
-.vscode
 
 # Source data files
 /data
