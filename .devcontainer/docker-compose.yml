@@ -6,7 +6,7 @@ services:
       context: ..
       dockerfile: .devcontainer/Dockerfile
       args:
-        VARIANT: 3.8
+        VARIANT: 3.9
     volumes:
       - ..:/workspace:cached
     command: sleep infinity
@@ -14,11 +14,9 @@ services:
       - db
     
   db:
-    image: postgres:11-alpine
+    image: postgres:12-alpine
     restart: unless-stopped
     environment:
     - POSTGRES_USER=rebus
     - POSTGRES_PASSWORD=rebus
     - POSTGRES_DB=rebus_db
-    ports:
-      - 5433:5432
