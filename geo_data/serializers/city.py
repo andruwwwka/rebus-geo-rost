@@ -11,3 +11,4 @@ class CitySerializer(serializers.ModelSerializer):
         """Описание метаинформации сериалайзера городов."""
 
         model = City
+        fields = '__all__'

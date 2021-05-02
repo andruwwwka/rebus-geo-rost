@@ -11,3 +11,4 @@ class CategoriesSettingsSerializer(serializers.ModelSerializer):
         """Описание метаинформации сериалайзера категорий для городов."""
 
         model = CategoriesSettings
+        fields ='__all__'
