@@ -8,5 +8,5 @@ from ..serializers import CitySerializer
 class CityViewSet(ModelViewSet):
     """Представление городов."""
 
-    quryset = City.objects.all()
+    queryset = City.objects.all()
     serializer_class = CitySerializer
