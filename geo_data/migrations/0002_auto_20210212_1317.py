@@ -9,13 +9,19 @@ from django.db import migrations
 
 def load_points(*args, **kwargs):
     """Загрузка начальных данных."""
-    fixture_path = os.path.join(
-        settings.BASE_DIR,
-        'geo_data',
-        'fixtures',
-        'initial_data.json'
-    )
-    call_command('loaddata', fixture_path)
+    fixture_files = [
+        'initial_settings.json',
+        'initial_yaroslavl.json',
+        'initial_kazan.json',
+    ]
+    for file in fixture_files:
+        fixture_path = os.path.join(
+            settings.BASE_DIR,
+            'geo_data',
+            'fixtures',
+            file
+        )
+        call_command('loaddata', fixture_path)
 
 
 class Migration(migrations.Migration):

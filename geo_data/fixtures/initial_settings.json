@@ -1,0 +1,391 @@
+[
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "geo_data",
+      "model": "category"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "geo_data",
+      "model": "geoobject"
+    }
+  },
+  {
+    "model": "geo_data.category",
+    "pk": 1,
+    "fields": {
+      "name": "\u0410\u043f\u0442\u0435\u043a\u0438",
+      "power": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "geo_data.category",
+    "pk": 2,
+    "fields": {
+      "name": "\u0411\u043e\u043b\u044c\u043d\u0438\u0446\u044b",
+      "power": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "geo_data.category",
+    "pk": 3,
+    "fields": {
+      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0435 \u043f\u043b\u043e\u0449\u0430\u0434\u043a\u0438",
+      "power": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "geo_data.category",
+    "pk": 4,
+    "fields": {
+      "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0435 \u0441\u0430\u0434\u044b",
+      "power": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "geo_data.category",
+    "pk": 5,
+    "fields": {
+      "name": "\u0423\u0447\u0440\u0435\u0436\u0434\u0435\u043d\u0438\u044f \u0434\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u044f",
+      "power": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "geo_data.category",
+    "pk": 6,
+    "fields": {
+      "name": "\u041c\u0424\u0426",
+      "power": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "geo_data.category",
+    "pk": 7,
+    "fields": {
+      "name": "\u041e\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0438",
+      "power": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "geo_data.category",
+    "pk": 8,
+    "fields": {
+      "name": "\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u043d\u044b\u0435 \u043e\u0431\u044a\u0435\u043a\u0442\u044b \u0441\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u0430",
+      "power": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "geo_data.category",
+    "pk": 9,
+    "fields": {
+      "name": "\u0428\u043a\u043e\u043b\u044b",
+      "power": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 1,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 1,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 1,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 1,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 2,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 2,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 2,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 2,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 3,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 3,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 3,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 3,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
+      "content_type": 6,
+      "codename": "add_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
+      "content_type": 6,
+      "codename": "change_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
+      "content_type": 6,
+      "codename": "delete_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view \u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f",
+      "content_type": 6,
+      "codename": "view_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add \u041e\u0431\u044a\u0435\u043a\u0442",
+      "content_type": 7,
+      "codename": "add_geoobject"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change \u041e\u0431\u044a\u0435\u043a\u0442",
+      "content_type": 7,
+      "codename": "change_geoobject"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete \u041e\u0431\u044a\u0435\u043a\u0442",
+      "content_type": 7,
+      "codename": "delete_geoobject"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view \u041e\u0431\u044a\u0435\u043a\u0442",
+      "content_type": 7,
+      "codename": "view_geoobject"
+    }
+  }
+]
