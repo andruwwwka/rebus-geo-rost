@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  runserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #command: ["gunicorn", "--bind", "0.0.0.0:80", "rebus_geo_rost.wsgi:application"]
+    command: ["sleep", "infinity"]
+    environment:
+      - DB_PASSWORD=root
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/app/
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13.4-alpine
+    environment:
+      - POSTGRES_USER=rebus
+      - POSTGRES_PASSWORD=rebus
+      - POSTGRES_DB=rebus_db
